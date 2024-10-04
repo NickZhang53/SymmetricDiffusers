@@ -1,0 +1,58 @@
+{
+    "CNN": {
+        "hidden_channels1": 32,
+        "hidden_channels2": 64,
+        "in_channels": 3,
+        "kernel_size1": 3,
+        "kernel_size2": 5,
+        "padding1": 1,
+        "padding2": 1,
+        "stride1": 1,
+        "stride2": 1
+    },
+    "beam_search": true,
+    "beam_size": {
+        "PL": 256,
+        "time": 256
+    },
+    "dataset": "tsp",
+    "eval_batch_size": 64,
+    "eval_only": false,
+    "image_size": 32,
+    "num_digits": 4,
+    "num_pieces": 20,
+    "seed": 42,
+    "train": {
+        "batch_size": 512,
+        "diffusion": {
+            "latent": false,
+            "num_timesteps": 7,
+            "reverse": "generalized_PL",
+            "reverse_steps": [
+                0,
+                4,
+                5,
+                7
+            ],
+            "transition": "riffle"
+        },
+        "entropy_reg_rate": 0.05,
+        "epochs": 50,
+        "learning_rate": 0.0002,
+        "loss": "log_likelihood",
+        "record_wandb": true,
+        "reinforce_N": 10,
+        "reinforce_ema_rate": 0.995,
+        "run_name": "tsp_n=20",
+        "sample_N": 1,
+        "scheduler": "cosine-decay",
+        "warmup_steps": 51600
+    },
+    "transformer": {
+        "d_hid": 1024,
+        "dropout": 0.1,
+        "embd_dim": 256,
+        "n_layers": 16,
+        "nhead": 8
+    }
+}

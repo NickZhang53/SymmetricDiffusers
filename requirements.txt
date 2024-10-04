@@ -1,0 +1,14 @@
+filelock==3.14.0
+loguru==0.7.2
+matplotlib==3.8.2
+ml-collections==0.1.1
+numpy==1.26.4
+ray==2.10.0
+scikit-learn==1.4.2
+scipy==1.11.4
+timm==1.0.7
+torch==2.3.1
+torch_geometric==2.5.3
+torchvision==0.18.1
+tqdm==4.66.1
+transformers==4.42.3

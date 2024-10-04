@@ -1,0 +1,55 @@
+{
+    "CNN": {
+        "description": "The CNN network for the Jigsaw Puzzle and Sort 4-digit MNIST Numbers",
+        "hidden_channels1": "Hidden channel for the first conv layer",
+        "hidden_channels2": "Hidden channel for the second conv layer",
+        "in_channels": "Number of input channels",
+        "kernel_size1": "Kernel size for the first conv layer",
+        "kernel_size2": "Kernel size for the second conv layer",
+        "padding1": "Padding for the first conv layer",
+        "padding2": "Padding for the second conv layer",
+        "stride1": "Stride for the first conv layer",
+        "stride2": "Stride for the second conv layer"
+    },
+    "beam_search": "Bool, 'true' for beam search, 'false' for greedy decoding",
+    "beam_size": {
+        "description": "Only used if beam_search is 'true'",
+        "PL": "The beam size for sampling from the GPL distribution",
+        "time": "The beam size along the reverse timesteps of diffusion, must be <= beam_size.PL"
+    },
+    "dataset": "The task to solve. One of 'unscramble-noisy-MNIST', 'unscramble-CIFAR10', 'sort-MNIST', 'tsp'",
+    "eval_batch_size": "Batch size during evaluation",
+    "eval_only": "Bool, 'true' if you want to run evaluation only, 'false' if you want to train and then eval",
+    "image_size": 28,
+    "num_digits": 4,
+    "num_pieces": "n, the nxn in unscramble-noisy-MNIST and unscramble-CIFAR10, the number of 4-digit numbers in sorting, or the number of vertices in TSP",
+    "seed": "Random seed",
+    "train": {
+        "batch_size": "Batch size during training",
+        "diffusion": {
+            "latent": "Bool, whether or not to use REINFORCE, 'true' for unscramble-noisy-MNIST and unscramble-CIFAR10, 'false' for other tasks",
+            "num_timesteps": "T, the total number of timesteps",
+            "reverse": "The reverse method, 'PL' or 'generalized_PL' or 'original'",
+            "reverse_steps": [0, "denoising schedule, must start with 0 and end with T"],
+            "transition": "Forward transition method, 'riffle' or 'swap' or 'insert'"
+        },
+        "entropy_reg_rate": "Only used for unscramble-noisy-MNIST and unscramble-CIFAR10, the entropy regularization rate during REINFORCE",
+        "epochs": "Number of epochs",
+        "learning_rate": "(maximum) learning rate",
+        "loss": "The loss type, 'log_likelihood' or 'log_likelihood_randt'",
+        "record_wandb": "Bool, whether or not to use wandb",
+        "reinforce_N": "Only used for unscramble-noisy-MNIST and unscramble-CIFAR10, the N in REINFORCE",
+        "reinforce_ema_rate": "Only used for unscramble-noisy-MNIST and unscramble-CIFAR10, the ema rate in REINFORCE",
+        "run_name": "Run name",
+        "sample_N": "Number of trajectories when sampling the forward process during loss computation",
+        "scheduler": "Learning rate scheduler, 'cosine-decay' or 'transformer' or 'cosine-with-warmup'",
+        "warmup_steps": "Number of warmup steps, used when scheduler is 'transformer' or 'cosine-with-warmup'"
+    },
+    "transformer": {
+        "d_hid": "Hidden dimension size in the feed-forward network",
+        "dropout": "Dropout rate in Transformer",
+        "embd_dim": "d_model in Transformer",
+        "n_layers": "Number of transformer encoder layers",
+        "nhead": "Number of attention heads"
+    }
+}
