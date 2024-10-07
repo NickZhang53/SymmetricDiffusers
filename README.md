@@ -13,7 +13,22 @@ This is the official PyTorch implementation for the paper:
 
 **Abstract:** Finite symmetric groups $S_n$ are essential in fields such as combinatorics, physics, and chemistry. However, learning a probability distribution over $S_n$ poses significant challenges due to its intractable size and discrete nature. In this paper, we introduce *SymmetricDiffusers*, a novel discrete diffusion model that simplifies the task of learning a complicated distribution over $S_n$ by decomposing it into learning simpler transitions of the reverse diffusion using deep neural networks. We identify the riffle shuffle as an effective forward transition and provide empirical guidelines for selecting the diffusion length based on the theory of random walks on finite groups. Additionally, we propose a generalized Plackett-Luce (PL) distribution for the reverse transition, which is provably more expressive than the PL distribution. We further introduce a theoretically grounded "denoising schedule" to improve sampling and learning efficiency. Extensive experiments show that our model achieves state-of-the-art or comparable performances on solving tasks including sorting 4-digit MNIST images, jigsaw puzzles, and traveling salesman problems.
 
-**arXiv:** To be updated
+**arXiv:** [https://arxiv.org/abs/2410.02942v1](https://arxiv.org/abs/2410.02942v1)
+
+## Citations
+Please consider citing our paper in your publications if it helps. Here is the bibtex:
+
+```
+@misc{zhang2024symmetricdiffuserslearningdiscretediffusion,
+      title={SymmetricDiffusers: Learning Discrete Diffusion on Finite Symmetric Groups}, 
+      author={Yongxing Zhang and Donglin Yang and Renjie Liao},
+      year={2024},
+      eprint={2410.02942},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.02942}, 
+}
+```
 
 ## Requirements
 Install requirements:
